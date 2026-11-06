@@ -73,7 +73,7 @@ We illustrate the performance of our TDM4Rec comparing with ten state-of-the-art
 # Hyperparameter Sensitivity Analysis
 To investigate the impact of key hyperparameters on TDM4Rec, we conduct sensitivity analyses on the time scale $\mathcal{D}$ and the ratio $\mathcal{Q}$. Specifically, $\mathcal{D}$ controls the granularity of temporal partitioning in the time sequence embedding, providing temporal context for Mamba to model item transitions, while $\mathcal{Q}$ determines the frequency threshold for retaining low-frequency components in the frequency-domain filtering layer. We vary $\mathcal{D}$ over ${7, 30, 60, 90, 180, 365}$ days and $\mathcal{Q}$ over ${0.55, 0.65, 0.75, 0.85, 0.95}$.
 
-![1](Images/Time_Recall_NDCG.jpg)
+![1](Images/Time_Recall_NDCG.jpg) 
 As shown in the figure above, different datasets exhibit varying sensitivity to $\mathcal{D}$. On Beauty, Video, and Toys, the recommendation performance generally increases initially and then decreases as $\mathcal{D}$ increases, with the best performance achieved at $\mathcal{D}=60$ for Beauty and $\mathcal{D}=180$ for both Video and Toys. In contrast, Sports achieves the best performance at $\mathcal{D}=365$, while Steam exhibits some fluctuations across different time scales. ML-1M achieves the best performance at $\mathcal{D}=7$. These results indicate that different datasets benefit from different temporal partitioning scales. Selecting an appropriate time scale provides Mamba with suitable temporal context to better model item transitions, thereby improving recommendation performance.
 
 ![2](Images/Ratio_Recall_NDCG.jpg)
