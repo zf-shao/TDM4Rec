@@ -7,7 +7,7 @@ TDM4Rec is a Mamba-based architecture, TDM4Rec first integrates item and time se
 
 
 # Datasets
-We utilize six benchmark datasets to evaluate our TDM4Rec, all of which can be downloaded in [BaiDu Cloud Drive (Password: e272]([https://drive.google.com/drive/folders/1Ir0nVoC_1flw3zW9N_ANck_XaGTvCNTa](https://pan.baidu.com/s/1p51sWMgVFbAaHQmL4aD_-g#list/path=%2F](https://pan.baidu.com/s/1p51sWMgVFbAaHQmL4aD_-g#list/path=%2F)): 
+We utilize six benchmark datasets to evaluate our TDM4Rec, all of which can be downloaded in [BaiDu Cloud Drive (Password: e272](https://pan.baidu.com/s/1p51sWMgVFbAaHQmL4aD_-g#list/path=%2F](https://pan.baidu.com/s/1p51sWMgVFbAaHQmL4aD_-g#list/path=%2F)): 
 * Amazon Beauty, Sports are two representative sub-datasets gathered from Amazon dataset, which contains a series of product reviews crawled from Amazon.com. They are split by the top-level product categories on Amazon, we adopt the “Beauty”, “Sports and Outdoors (Sports)” categories.
 * ML-1M is a large and dense dataset with long item sequences, which collected from the movie recommendation site MovieLens. 
 * Yelp is a large business recommendation dataset. We treat the transaction records after $\text{January}$ $1 ^ {st}$,  $2019$.
