@@ -62,6 +62,8 @@ config = Config(model=FDM4Rec, config_file_list=['config/config.yaml'])
  ```
 
 # Overall Performance
+We illustrate the performance of our TDM4Rec comparing with ten state-of-the-art baselines on six datasets. The best performance methods are in boldface, and the second best methods are underlined. $^*$ denotes the improvement is significant with $p$ -value < 0.05.
+
 ![Performance](Images/Performance.jpg)
 
 **(1) TDM4Rec's Advantages.** TDM4Rec jointly incorporates time-awareness and frequency-domain filtering to address insufficient modeling of time-aware item transitions and susceptibility to noisy interactions. Specifically, time sequence embeddings provide explicit temporal context for Mamba to better model time-aware item transitions and capture evolving user preferences. Meanwhile, the proposed Denoising-Mamba module combines frequency-domain filtering with denoised residual connections to suppress potential high-frequency noise and reduce noise propagation during sequence modeling. These designs enable TDM4Rec to learn more accurate and robust user preference representations, contributing to its superior recommendation performance.
