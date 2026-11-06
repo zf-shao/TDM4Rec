@@ -16,10 +16,16 @@ All dataset files can be obtained from the cloud storage [BaiDu Cloud Drive (Pas
 
 
 
+# Environment Setting
+ ```
+conda create -n TDM4Rec python=3.8
+conda activate TDM4Rec
+ ```
+The required environment settings are detailed in the `requirements.txt` file.
 
 
-
-## Run
+# Quick-Start
+## How to run
 Just run it directly：
  ```
 python main.py  
