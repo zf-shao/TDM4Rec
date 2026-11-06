@@ -61,5 +61,17 @@ Example for Beauty
 config = Config(model=FDM4Rec, config_file_list=['config/config.yaml'])
  ```
 
+
+
+# Hyperparameter Sensitivity Analysis
+To investigate the impact of key hyperparameters on TDM4Rec, we conduct sensitivity analyses on the time scale $\mathcal{D}$ and the ratio $\mathcal{Q}$. Specifically, $\mathcal{D}$ controls the granularity of temporal partitioning in the time sequence embedding, providing temporal context for Mamba to model item transitions, while $\mathcal{Q}$ determines the frequency threshold for retaining low-frequency components in the frequency-domain filtering layer. We vary $\mathcal{D}$ over ${7, 30, 60, 90, 180, 365}$ days and $\mathcal{Q}$ over ${0.55, 0.65, 0.75, 0.85, 0.95}$.
+
+![1](Images/Time_Recall_NDCG.jpg)
+As shown in the figure above, different datasets exhibit varying sensitivity to $\mathcal{D}$. On Beauty, Video, and Toys, the recommendation performance generally increases initially and then decreases as $\mathcal{D}$ increases, with the best performance achieved at $\mathcal{D}=60$ for Beauty and $\mathcal{D}=180$ for both Video and Toys. In contrast, Sports achieves the best performance at $\mathcal{D}=365$, while Steam exhibits some fluctuations across different time scales. ML-1M achieves the best performance at $\mathcal{D}=7$. These results indicate that different datasets benefit from different temporal partitioning scales. Selecting an appropriate time scale provides Mamba with suitable temporal context to better model item transitions, thereby improving recommendation performance.
+
+![2](Images/Ratio_Recall_NDCG.jpg)
+As shown in the figure above, different datasets also exhibit varying sensitivity to $\mathcal{Q}$. The performance on Beauty remains relatively stable across different ratios, while Video achieves the best performance at $\mathcal{Q}=0.85$. Toys and Sports achieve the best performance at $\mathcal{Q}=0.55$, whereas Steam and ML-1M perform best at $\mathcal{Q}=0.95$. These results indicate that the optimal degree of low-frequency retention varies across datasets. A smaller $\mathcal{Q}$ suppresses more high-frequency components but may discard useful preference information, whereas a larger $\mathcal{Q}$ retains more information but may also preserve potential high-frequency noise. Therefore, selecting an appropriate $\mathcal{Q}$ helps Denoising-Mamba balance noise suppression and preference information preservation, thereby improving recommendation performance.
+
+
 ## Acknowledgements
 Our code implementation is based on the [RecBole](https://github.com/RUCAIBox/RecBole) and [Pytorch](https://github.com/pytorch/pytorch) frameworks.
