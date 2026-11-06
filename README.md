@@ -15,6 +15,31 @@ We utilize six benchmark datasets to evaluate TDM4Rec, all of which are obtained
 All dataset files can be obtained from the cloud storage [BaiDu Cloud Drive (Password: e272)](https://pan.baidu.com/s/1p51sWMgVFbAaHQmL4aD_-g#list/path=%2F).
 
 
+# Baselines
+The detailed descriptions of the baseline methods used for comparison with our TDM4Rec are given below:
+
+*GRU4Rec: captures sequential dependencies in interaction sequences by leveraging GRU.
+
+*BERT4Rec: acquires global context by implementing a bi-directional Transformer under the paradigm of BERT. 
+
+*SASRec: extracts sequential characteristics relying on a unidirectional Transformer.
+
+*TiSASRec: the first method to incorporate temporal information into Transformer-based SR by constructing a time difference matrix and integrating it into the attention mechanism.
+
+*FMLP-Rec: refines sequence representation via learnable filters, which is the pioneer exploration of frequency-based filtering technique in SR.
+
+*FreqRec: jointly captures intra- and inter-sequential dynamics by integrating a learnable frequency-domain MLP with self-attention, and further improves performance by incorporating a frequency-domain consistency loss. 
+
+*Mamba4Rec: captures sequential dependencies via the selective SSM for efficient sequence modeling, which is the first exploration of Mamba architecture in SR.
+
+*ECHOMamba4Rec: employs bi-directional Mamba to enhance global modeling with frequency-domain filtering technique.
+
+*SIGMA: strengthens global and short-sequence modeling by adopting a specific bi-directional Mamba coupled with variant GRU.
+
+*TiM4Rec: incorporates temporal information into Mamba through a time-aware structured masked matrix while preserving linear computational complexity.
+
+
+
 
 # Environment Setting
  ```
