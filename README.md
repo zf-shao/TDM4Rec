@@ -16,7 +16,7 @@ All dataset files can be obtained from the cloud storage [BaiDu Cloud Drive (Pas
 
 
 # Baselines
-The detailed descriptions of the baseline methods used for comparison with our TDM4Rec are given below:
+We compare TDM4Rec with several representative baseline methods, which are briefly introduced below:
 
 * GRU4Rec: captures sequential dependencies in interaction sequences by leveraging GRU.
 
