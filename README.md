@@ -79,6 +79,10 @@ As shown in the figure above, different datasets exhibit varying sensitivity to 
 ![2](Images/Ratio_Recall_NDCG.jpg)
 As shown in the figure above, different datasets also exhibit varying sensitivity to $\mathcal{Q}$. The performance on Beauty remains relatively stable across different ratios, while Video achieves the best performance at $\mathcal{Q}=0.85$. Toys and Sports achieve the best performance at $\mathcal{Q}=0.55$, whereas Steam and ML-1M perform best at $\mathcal{Q}=0.95$. These results indicate that the optimal degree of low-frequency retention varies across datasets. A smaller $\mathcal{Q}$ suppresses more high-frequency components but may discard useful preference information, whereas a larger $\mathcal{Q}$ retains more information but may also preserve potential high-frequency noise. Therefore, selecting an appropriate $\mathcal{Q}$ helps Denoising-Mamba balance noise suppression and preference information preservation, thereby improving recommendation performance.
 
+# Performance and Efficiency Comparison
+We compare TDM4Rec with baseline models in terms of recommendation performance (Recall@10 and NDCG@10), inference time per mini-batch (Infer.), and GPU memory usage (GPU Mem.) across six datasets and an additional long-sequence setting, ML-1M$_{\mathrm{Len}=200}$, with $L=2$. Inference time is normalized to Mamba4Rec (1.00$\times$).
+![Efficiency](Images/Efficiency.jpeg)
+As shown in the Table above, TDM4Rec achieves superior recommendation performance while maintaining relatively low GPU memory usage and inference overhead, demonstrating a favorable balance between recommendation accuracy and computational efficiency.
 
 ## Acknowledgements
 Our code implementation is based on the [RecBole](https://github.com/RUCAIBox/RecBole) and [Pytorch](https://github.com/pytorch/pytorch) frameworks.
